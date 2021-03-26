@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TransitionsDemo.Views.DetailsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="https://image.shutterstock.com/image-photo/cat-medical-mask-protective-antiviral-600w-1716771988.jpg"
+                   x:Name="CatPicture"
+                   sharedTransitions:Transition.Name="Miau"
+                   WidthRequest="500"/>
+            <Label Text="The same picture of a Miau wearing a mask, but BIGGER! :)"
+                HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
