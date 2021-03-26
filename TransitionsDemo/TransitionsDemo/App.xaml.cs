@@ -1,10 +1,8 @@
 ﻿using Ninject;
-using Plugin.SharedTransitions;
 using System;
 using TransitionsDemo.Modules;
 using TransitionsDemo.Services;
 using TransitionsDemo.ViewModels;
-using TransitionsDemo.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,14 +17,12 @@ namespace TransitionsDemo
             InitializeComponent();
             Kernel = new StandardKernel(new NavigationModule());
 
-            var mainPage = new SharedTransitionNavigationPage(new MainPage())
-            {
-                BindingContext = Kernel.Get<MainPageViewModel>()
-            };
+            SetUpMainPage();
+        }
 
-            var navService = Kernel.Get<INavigationService>() as NavigationService;
-            navService.Navigation = mainPage.Navigation;
-            MainPage = mainPage;
+        private void SetUpMainPage()
+        {
+
         }
 
         protected override void OnStart()
